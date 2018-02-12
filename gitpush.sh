@@ -1,4 +1,4 @@
 git status
 git add -A
 git commit -m 'auto-push'
-git push origin mater
+git push origin master
