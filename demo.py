@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, random
 
 chromosome_size = 128
 
@@ -55,7 +55,7 @@ class GeneticAlgorithm:
 
 			return rc
 
-
+	
 	def generate_random_population(self, n):
 
 		randpop = {}
@@ -75,7 +75,16 @@ class GeneticAlgorithm:
 
 
 	def Crossover(self, p=0.7):
-		newPop = sorted(population)
+
+		pop = self.population
+		chromosomes = []
+		fitness = []
+
+		for key in sorted(pop, key=pop.get, reverse=True):
+			chromosomes.append(key)
+			fitness.append(pop[key])
+
+
 
 
 	def Mutate(self, chromosome, p):
@@ -86,5 +95,3 @@ myalgo = GeneticAlgorithm(HighestNumberProblem(40), {})
 
 pop = myalgo.generate_random_population(100)
 
-for key in pop:
-	print key, ":", pop[key]
